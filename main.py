@@ -103,7 +103,7 @@ def calcAdjustedScore(*, verbose=False):
 
     return a, b
 
-# 
+# Adjusts scores based on luck factor above
 def calcAdjustedLuckScore(*, verbose=False):
     r = random.randint(-luckFactor, luckFactor)
     a = calcAdjustedScore()[0] + r
@@ -142,15 +142,17 @@ def winner(*, verbose=False, luck=False):
             print(f"{sys.argv[1]} and {sys.argv[2]} tie with {a:.0f} points")
             return None
 
-calcEfg(verbose=True)
-calcOffTempo(verbose=True)
-calcDefTempo(verbose=True)
-calcOffEff(verbose=True)
-calcDefEff(verbose=True)
-calcAdjustedOffEff(verbose=True)
-calcAdjustedPoss(verbose=True)
-calcAdjustedScore(verbose=True)
-calcAdjustedLuckScore(verbose=True)
 
-winner(verbose=True, luck=False)
-winner(verbose=True, luck=True)
+if __name__ == "__main__":
+    calcEfg(verbose=True)
+    calcOffTempo(verbose=True)
+    calcDefTempo(verbose=True)
+    calcOffEff(verbose=True)
+    calcDefEff(verbose=True)
+    calcAdjustedOffEff(verbose=True)
+    calcAdjustedPoss(verbose=True)
+    calcAdjustedScore(verbose=True)
+    calcAdjustedLuckScore(verbose=True)
+
+    winner(verbose=True, luck=False)
+    winner(verbose=True, luck=True)
